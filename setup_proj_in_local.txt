@@ -1,0 +1,41 @@
+1) httpd.conf
+
+<VirtualHost *:9999>
+          ServerName localhost
+          DocumentRoot "D:\projects\php\accounting\orchard\public"
+
+          SetEnv APPLICATION_ENV "development"  
+
+          <Directory "D:\projects\php\accounting\orchard\public">
+
+              DirectoryIndex index.php
+
+              AllowOverride All
+ 
+              Order allow,deny
+
+              Allow from all
+ 
+          </Directory>
+ </VirtualHost>
+
+2) Put 6 files under public folder
+3) make necessary changes in .htaccess file
+4) under application folder --> changes in Bootstrap.php
+5) application\configs\ --> ini files
+6) create data->logs->accounting folder
+7) create data->temp
+8) create data\logs under application\modules\oa
+9) create data\logs under application\modules\alw
+10) Put comments handleError()/ notify() function in 3 files under library\Web\Accounting
+
+Database.php
+DatabaseRaw.php
+Logger.php
+
+11) application\modules\oa\controllers\ErrorController ---> mail part commented
+12) \application\modules\api\controllers\ErrorController
+-->mail part commented
+13 ) application\modules\developer\controllers\ErrorController
+
+
